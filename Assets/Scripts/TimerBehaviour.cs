@@ -6,10 +6,8 @@ public class TimerBehaviour : MonoBehaviour
 {
     public GameObject timerDisplay;
     public GameObject centralDisplay;
-
-    public int seconds = 10;
+    public int seconds = 30;
     public bool countingDown = false;
-    public GameObject script;
     void Start()
     { 
         if(seconds<10){
@@ -46,5 +44,9 @@ public class TimerBehaviour : MonoBehaviour
             GetComponent<Animator>().SetTrigger("TriggerParado");
             centralDisplay.GetComponent<Text>().text = "GAME OVER";
         }
+    }
+
+    public int getSeconds(){
+        return seconds;
     }
 }
